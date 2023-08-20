@@ -32,3 +32,8 @@ Specialists from here trying to make there best for making project from your per
 ### Known problems
 
 1. One of the required condition in project was in using Bootstrap or Tailwind frameworks. I'm never work with them, so i make this in CSS.
+2. Mobile browsers (like one on Samsung, Huawei etc.) are not tested and can work with problems
+
+### Screenshots
+
+#### All rights reserved by [adRespect](https://adrespect.pl/). Photo and materials was used from adRespect and [freepic](https://www.freepik.com/)

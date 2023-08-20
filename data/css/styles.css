@@ -392,6 +392,10 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
+  .heroBlock article {
+    margin: 5rem auto;
+    width: 80%;
+  }
 }
 .offertBlock {
   background-color: var(--offetrBlock);
