@@ -1,0 +1,225 @@
+nav {
+  align-items: center;
+  display: flex;
+  height: 4.5rem;
+  justify-content: center;
+  max-width: 100%;
+  background: #ffffff;
+
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 80rem;
+    width: -webkit-fill-available;
+    width: -moz-available;
+
+    #burgerMenu {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      list-style: none;
+
+      li {
+        cursor: pointer;
+        position: relative;
+
+        .header--offertList {
+          background: #ffffff;
+          display: grid;
+          position: absolute;
+          padding: 1rem;
+          padding-right: 3rem;
+          gap: 1rem;
+          grid-template-rows: repeat(3, 0fr);
+          grid-template-columns: 1fr;
+          inset: auto auto -7.5rem 0;
+          list-style: none;
+          transition: opasity 0.31415s, grid-template-rows 0.31415s 0.167s;
+          opacity: 0;
+          transform: translateY(-100vh);
+          z-index: 3;
+          width: max-content;
+
+          & > li {
+            overflow: hidden;
+            // width: -webkit-fill-available;
+            width: fit-content;
+          }
+
+          li {
+            &:hover {
+              color: var(--white-hover);
+            }
+          }
+        }
+
+        a {
+          display: flex;
+          flex-direction: row;
+          gap: 0.5rem;
+        }
+
+        img {
+          aspect-ratio: 1;
+          object-fit: contain;
+          transition: 0.31415s;
+          width: 1.25rem;
+        }
+
+        &:first-child:hover img {
+          transform: rotate(180deg);
+        }
+
+        &:first-child:hover .header--offertList {
+          grid-template-rows: repeat(3, 1fr);
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        &:last-child:not(.header--offertList li) {
+          cursor: default;
+          position: relative;
+
+          & label input {
+            background-color: var(--white);
+            border-radius: 100vw;
+            box-shadow: 0 0 0 0.125rem var(--black);
+            display: none;
+            height: 1.75rem;
+            inset: 0 0 auto auto;
+            padding-inline: 1rem;
+            position: absolute;
+            transform: translate(-1000%);
+            width: 31rem;
+
+            &[hovered] {
+              display: block;
+              transform: translate(0.5rem, -0.25rem);
+            }
+
+            &[hovered="open"] {
+              animation: searchOpen 0.3s ease;
+              opacity: 0;
+              transition: 0.31415s;
+            }
+
+            &[hovered="closing"] {
+              animation: searchClose 0.3s ease;
+            }
+          }
+
+          &:hover label input,
+          & label input:focus {
+            opacity: 1;
+          }
+
+          &:last-child:hover img {
+            transform: scale(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes searchOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes searchClose {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  nav {
+    section {
+      max-width: 80%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+
+    section {
+      position: relative;
+
+      #burgerMenu {
+        cursor: pointer;
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 2rem;
+        background: transparent;
+        transition: background 0.167s, transform 0.167s;
+        transform: scale(1);
+
+        &:hover {
+          background: var(--white-hover);
+        }
+
+        &:active {
+          transform: scale(0.75);
+        }
+
+        div {
+          background: var(--black);
+          width: 100%;
+          height: 0.25rem;
+        }
+      }
+
+      ul:not(.header--offertList) {
+        display: none;
+      }
+
+      #burgerMenu[opened] ~ ul {
+        font-size: 1.5rem;
+        background: var(--white);
+        display: inherit;
+        position: absolute;
+        flex-direction: column;
+        inset: 25% 5% auto auto;
+        width: 50%;
+        padding: 1rem;
+        align-items: center;
+        opacity: 1;
+        transition: 0.31415s linear;
+
+        li {
+          padding: 0.25rem 1rem;
+
+          &:first-child {
+            img {
+              rotate: 90deg;
+            }
+          }
+
+          .header--offertList {
+            inset: auto auto -350% -150%;
+            padding-right: inherit;
+          }
+        }
+      }
+    }
+  }
+}

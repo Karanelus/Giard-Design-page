@@ -1,0 +1,131 @@
+.offertBlock {
+  background-color: var(--offetrBlock);
+  padding-block: 7.5rem 10rem;
+  width: 100%;
+
+  &--class {
+    margin-inline: auto;
+    width: 65rem;
+
+    &--textZone {
+      padding-bottom: 6rem;
+      width: 70%;
+
+      p {
+        color: var(--buttonContactWithUs);
+        padding-bottom: 1rem;
+        font-size: 0.75rem;
+      }
+
+      h2 {
+        padding-bottom: 2rem;
+      }
+    }
+  }
+
+  &--cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-inline: auto;
+    max-width: 80rem;
+
+    &--card {
+      aspect-ratio: 1;
+      background-color: var(--white);
+      border-radius: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3rem;
+      transition: 0.167s;
+      width: 23.5rem;
+
+      &:hover {
+        --white: #d3c1c1;
+
+        transform: scale(1.05);
+      }
+
+      &:active {
+        --white: #a79898;
+
+        transform: scale(1.025);
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        height: 65%;
+        justify-content: space-between;
+
+        img {
+          padding-bottom: 1.75rem;
+          width: fit-content;
+        }
+
+        section {
+          h3 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            padding-bottom: 0.75rem;
+          }
+
+          p {
+            font-size: 0.875rem;
+          }
+        }
+      }
+
+      button {
+        background: transparent;
+        border-bottom: 1px solid var(--buttonContactWithUs);
+        color: var(--buttonContactWithUs);
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+
+        img {
+          object-fit: contain;
+          padding-left: 0.5rem;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .offertBlock {
+    &--class {
+      width: fit-content;
+
+      &--textZone {
+        margin-inline: auto;
+      }
+    }
+
+    &--cards {
+      flex-direction: column;
+      max-width: fit-content;
+      gap: 2rem;
+
+      &--card {
+        width: 30rem;
+
+        div {
+          section {
+            h3 {
+              font-size: 2.5rem;
+            }
+
+            p {
+              font-size: 1.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

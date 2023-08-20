@@ -1,0 +1,154 @@
+.aboutBlock {
+  background-color: var(--aboutBlock);
+  color: var(--aboutBLockColor);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__image {
+    @include divWithGrid;
+
+    img {
+      @include imgOnGrid;
+    }
+
+    &__curcle {
+      cursor: pointer;
+      box-shadow: 0 0 0 0.125rem var(--white);
+      border-radius: 10rem;
+      display: grid;
+      place-items: center;
+      position: absolute;
+
+      aspect-ratio: 1;
+      width: 1rem;
+
+      &::before {
+        aspect-ratio: 1;
+        background: white;
+        border-radius: 100vw;
+        content: "";
+        display: block;
+        scale: 0 0;
+        transition: scale 0.167s linear;
+        width: 0.625rem;
+      }
+
+      &::after {
+        pointer-events: none;
+        color: var(--black);
+        border-radius: 1rem;
+        width: 15rem;
+        height: fit-content;
+        position: absolute;
+        background: var(--white);
+        font-family: "Montserrat", sans-serif;
+        opacity: 0;
+        // transform: translate(-100%, -40%);
+        padding: 1rem;
+        z-index: 3;
+        transition: opacity 0.167s ease-in 0.167s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      &:hover::before {
+        scale: 1 1;
+      }
+
+      &--01 {
+        inset: 10% 10% auto auto;
+
+        &::after {
+          content: "Używamy najlepsze z istniejących roślin, aby tereń twojej działki wyglądał najbardziej atrakcyjnie";
+          transform: translate(-60%, 40%);
+        }
+      }
+
+      &--02 {
+        inset: 90% 30% auto auto;
+
+        &::after {
+          content: "Rozplanowany krajobraz wraz z róźnymi materiałami dekoracyjnymi w bilansie z trawą i inną roślinnością będzię miła oku w róźne pore roku";
+          transform: translate(-60%, -40%);
+        }
+      }
+
+      &--03 {
+        inset: 55% 90% auto auto;
+
+        &::after {
+          content: "Zaprojektujemy oblicówkę twojego mieszkania dokładnie z nowymi standartami budowania, maksymalnie zbliżając go z naturą";
+          transform: translate(60%, 40%);
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin: 8.5rem auto 8.5rem 4rem;
+    max-width: 37.5rem;
+    padding-left: 6rem;
+
+    p {
+      font-size: 0.75rem;
+      padding-bottom: 1rem;
+    }
+
+    h2 {
+      max-width: 15.5rem;
+      padding-bottom: 2.5rem;
+
+      i {
+        font-family: "Inter", sans-serif;
+      }
+    }
+
+    h3 {
+      padding-bottom: 4.5rem;
+    }
+
+    a {
+      button {
+        background: transparent;
+        border-radius: 100vw;
+        color: var(--aboutBLockColor);
+        cursor: pointer;
+        outline: 1px solid var(--aboutBLockColor);
+        padding: 0.75rem 1.5rem 0.875rem;
+        transition: 0.31415s;
+
+        img {
+          filter: none;
+          float: right;
+          margin-left: 0.5rem;
+          padding: 0.125rem;
+          transition: 0.31415s;
+          width: 1.25rem;
+        }
+
+        &:hover {
+          color: var(--aboutBLockColor-hover);
+          outline-color: var(--aboutBLockColor-hover);
+
+          img {
+            filter: invert(40%) sepia(6%) saturate(19%) hue-rotate(352deg) brightness(106%) contrast(90%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .aboutBlock {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    &__text {
+      grid-row-start: 1;
+      padding-left: 0;
+    }
+  }
+}

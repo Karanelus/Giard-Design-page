@@ -1,0 +1,65 @@
+.instagramBlock {
+  color: var(--white);
+
+  &--section {
+    background-color: var(--buttonContactWithUs);
+    margin: 3.75rem auto;
+    width: 65rem;
+
+    div {
+      display: flex;
+      gap: 3rem;
+      padding: 7.5rem 7rem;
+      place-items: end;
+
+      h2 {
+        font-size: 2.5rem;
+        line-height: 120%;
+        width: fit-content;
+      }
+
+      article {
+        display: grid;
+        gap: 1.5rem;
+        line-height: 150%;
+
+        button {
+          background-color: var(--aboutBLockColor);
+          border-radius: 100vw;
+          color: var(--buttonContactWithUs);
+          cursor: pointer;
+          padding: 0.625rem 1.51rem 0.75rem;
+          transition: 0.31415s;
+          width: fit-content;
+
+          &:hover {
+            background-color: var(--aboutBLockColor-hover);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .instagramBlock {
+    &--section {
+      margin: 3rem auto;
+      width: 75%;
+
+      div {
+        align-items: center;
+        flex-direction: column;
+        padding: 4rem 2.5rem;
+
+        h2 {
+          text-align: center;
+        }
+      }
+
+      article {
+        place-items: center;
+      }
+    }
+  }
+}
