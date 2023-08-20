@@ -267,7 +267,7 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
     display: inherit;
     position: absolute;
     flex-direction: column;
-    inset: 25% 5% auto auto;
+    inset: 0 3rem auto auto;
     width: 50%;
     padding: 1rem;
     align-items: center;
@@ -281,7 +281,7 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
     rotate: 90deg;
   }
   nav section #burgerMenu[opened] ~ ul li .header--offertList {
-    inset: auto auto -350% -150%;
+    inset: auto auto -7.5rem -15rem;
     padding-right: inherit;
   }
 }
