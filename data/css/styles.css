@@ -536,12 +536,12 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
 }
 .aboutBlock__image__curcle::before {
   aspect-ratio: 1;
-  background: white;
+  background: var(--white);
   border-radius: 100vw;
   content: "";
   display: block;
-  scale: 0 0;
-  transition: scale 0.167s linear;
+  transform: scale(0);
+  transition: transform 0.167s linear;
   width: 0.625rem;
 }
 .aboutBlock__image__curcle::after {
@@ -559,11 +559,11 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
   z-index: 3;
   transition: opacity 0.167s ease-in 0.167s;
 }
-.aboutBlock__image__curcle:hover::after {
+.aboutBlock__image__curcle:hover::after, .aboutBlock__image__curcle.clicked::after {
   opacity: 1;
 }
 .aboutBlock__image__curcle:hover::before {
-  scale: 1 1;
+  transform: scale(1);
 }
 .aboutBlock__image__curcle--01 {
   inset: 10% 10% auto auto;

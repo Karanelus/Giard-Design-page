@@ -143,6 +143,19 @@ const onIntervalImgSlide = () => {
 
 setInterval(onIntervalImgSlide, 10000);
 
+// About image info dots
+
+const userDevice = window.navigator.userAgent;
+const aboutBlock_Dots = [...document.querySelectorAll(".aboutBlock__image__curcle")];
+
+aboutBlock_Dots.forEach((el) => {
+  el.addEventListener("click", () => {
+    if (userDevice.match(/Mobile/i)) {
+      el.classList.toggle("clicked");
+    }
+  });
+});
+
 // Popup trigger
 
 const realizationBlock_Gallery = document.querySelector(".realizationBlock--photoGallery");

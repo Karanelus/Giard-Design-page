@@ -24,12 +24,12 @@
 
       &::before {
         aspect-ratio: 1;
-        background: white;
+        background: var(--white);
         border-radius: 100vw;
         content: "";
         display: block;
-        scale: 0 0;
-        transition: scale 0.167s linear;
+        transform: scale(0);
+        transition: transform 0.167s linear;
         width: 0.625rem;
       }
 
@@ -43,18 +43,18 @@
         background: var(--white);
         font-family: "Montserrat", sans-serif;
         opacity: 0;
-        // transform: translate(-100%, -40%);
         padding: 1rem;
         z-index: 3;
         transition: opacity 0.167s ease-in 0.167s;
       }
 
-      &:hover::after {
+      &:hover::after,
+      &.clicked::after {
         opacity: 1;
       }
 
       &:hover::before {
-        scale: 1 1;
+        transform: scale(1);
       }
 
       &--01 {
