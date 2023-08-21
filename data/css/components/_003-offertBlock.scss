@@ -100,6 +100,30 @@
   .offertBlock {
     padding-block: 5rem;
 
+    &--cards {
+      &--card {
+        width: 17.5rem;
+
+        div {
+          img {
+            padding-bottom: 1.75rem;
+            width: 12.5%;
+          }
+
+          section {
+            h3 {
+              font-size: 1.5rem;
+              padding-bottom: 0;
+            }
+
+            p {
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+
     &--class {
       width: fit-content;
 
@@ -107,7 +131,11 @@
         margin-inline: auto;
       }
     }
+  }
+}
 
+@media (max-width: 600px) {
+  .offertBlock {
     &--cards {
       flex-direction: column;
       max-width: fit-content;

@@ -403,6 +403,9 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
     margin: 5rem auto;
     width: 80%;
   }
+  .heroBlock div {
+    gap: 1rem;
+  }
 }
 .offertBlock {
   background-color: var(--offetrBlock);
@@ -491,6 +494,20 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
   .offertBlock {
     padding-block: 5rem;
   }
+  .offertBlock--cards--card {
+    width: 17.5rem;
+  }
+  .offertBlock--cards--card div img {
+    padding-bottom: 1.75rem;
+    width: 12.5%;
+  }
+  .offertBlock--cards--card div section h3 {
+    font-size: 1.5rem;
+    padding-bottom: 0;
+  }
+  .offertBlock--cards--card div section p {
+    font-size: 0.75rem;
+  }
   .offertBlock--class {
     width: -moz-fit-content;
     width: fit-content;
@@ -498,6 +515,8 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
   .offertBlock--class--textZone {
     margin-inline: auto;
   }
+}
+@media (max-width: 600px) {
   .offertBlock--cards {
     flex-direction: column;
     max-width: -moz-fit-content;
