@@ -63,6 +63,7 @@ body {
   font-family: "Inter", sans-serif;
   grid-template-rows: 0fr auto 0fr;
   min-height: 100vh;
+  overflow-x: hidden;
   width: 100vw;
 }
 body h1,
@@ -106,7 +107,6 @@ nav {
   height: 4.5rem;
   justify-content: center;
   max-width: 100%;
-  background: #ffffff;
 }
 nav section {
   display: flex;
@@ -234,6 +234,7 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
     position: sticky;
     top: 0;
     z-index: 20;
+    background: var(--white);
   }
   nav section {
     position: relative;
@@ -246,14 +247,11 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
     justify-content: space-between;
     height: 2rem;
     background: transparent;
-    transition: background 0.167s, transform 0.167s;
+    transition: transform 0.167s;
     transform: scale(1);
   }
-  nav section #burgerMenu:hover {
-    background: var(--white-hover);
-  }
   nav section #burgerMenu:active {
-    transform: scale(0.75);
+    transform: scale(0.5);
   }
   nav section #burgerMenu div {
     background: var(--black);
@@ -269,7 +267,7 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
     display: inherit;
     position: absolute;
     flex-direction: column;
-    inset: 0 3rem auto auto;
+    inset: 3.2rem -4.5rem auto auto;
     width: 50%;
     padding: 1rem;
     align-items: center;
@@ -285,6 +283,13 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
   nav section #burgerMenu[opened] ~ ul li .header--offertList {
     inset: auto auto -7.5rem -15rem;
     padding-right: inherit;
+  }
+  nav section #burgerMenu[opened] ~ ul li:last-child:not(.header--offertList li) label input {
+    font-size: 1rem;
+    height: 2rem;
+    inset: 0 -7.5rem auto auto;
+    transform: translate(-1.5rem, -0.25rem);
+    width: 15rem;
   }
 }
 .heroBlock {
@@ -483,6 +488,9 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
 }
 
 @media (max-width: 1000px) {
+  .offertBlock {
+    padding-block: 5rem;
+  }
   .offertBlock--class {
     width: -moz-fit-content;
     width: fit-content;
@@ -525,13 +533,13 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
   width: 100%;
 }
 .aboutBlock__image__curcle {
-  cursor: pointer;
-  box-shadow: 0 0 0 0.125rem var(--white);
+  aspect-ratio: 1;
   border-radius: 10rem;
+  box-shadow: 0 0 0 0.125rem var(--white);
+  cursor: pointer;
   display: grid;
   place-items: center;
   position: absolute;
-  aspect-ratio: 1;
   width: 1rem;
 }
 .aboutBlock__image__curcle::before {
@@ -638,6 +646,12 @@ nav section ul li:last-child:not(.header--offertList li):last-child:hover img {
   .aboutBlock__text {
     grid-row-start: 1;
     padding-left: 0;
+  }
+  .aboutBlock__image__curcle {
+    width: 1.5rem;
+  }
+  .aboutBlock__image__curcle::before {
+    width: 1.25rem;
   }
 }
 .realizationBlock {
@@ -1018,5 +1032,9 @@ dialog #closeButton img {
 @media (max-width: 600px) {
   html {
     font-size: 10px;
+  }
+  button {
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }

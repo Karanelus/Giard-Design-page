@@ -4,7 +4,6 @@ nav {
   height: 4.5rem;
   justify-content: center;
   max-width: 100%;
-  background: #ffffff;
 
   section {
     display: flex;
@@ -156,6 +155,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 20;
+    background: var(--white);
 
     section {
       position: relative;
@@ -168,15 +168,11 @@ nav {
         justify-content: space-between;
         height: 2rem;
         background: transparent;
-        transition: background 0.167s, transform 0.167s;
+        transition: transform 0.167s;
         transform: scale(1);
 
-        &:hover {
-          background: var(--white-hover);
-        }
-
         &:active {
-          transform: scale(0.75);
+          transform: scale(0.5);
         }
 
         div {
@@ -196,7 +192,7 @@ nav {
         display: inherit;
         position: absolute;
         flex-direction: column;
-        inset: 0 3rem auto auto;
+        inset: 3.2rem -4.5rem auto auto;
         width: 50%;
         padding: 1rem;
         align-items: center;
@@ -215,6 +211,16 @@ nav {
           .header--offertList {
             inset: auto auto -7.5rem -15rem;
             padding-right: inherit;
+          }
+
+          &:last-child:not(.header--offertList li) {
+            & label input {
+              font-size: 1rem;
+              height: 2rem;
+              inset: 0 -7.5rem auto auto;
+              transform: translate(-1.5rem, -0.25rem);
+              width: 15rem;
+            }
           }
         }
       }

@@ -12,14 +12,13 @@
     }
 
     &__curcle {
-      cursor: pointer;
-      box-shadow: 0 0 0 0.125rem var(--white);
+      aspect-ratio: 1;
       border-radius: 10rem;
+      box-shadow: 0 0 0 0.125rem var(--white);
+      cursor: pointer;
       display: grid;
       place-items: center;
       position: absolute;
-
-      aspect-ratio: 1;
       width: 1rem;
 
       &::before {
@@ -149,6 +148,16 @@
     &__text {
       grid-row-start: 1;
       padding-left: 0;
+    }
+
+    &__image {
+      &__curcle {
+        width: 1.5rem;
+
+        &::before {
+          width: 1.25rem;
+        }
+      }
     }
   }
 }

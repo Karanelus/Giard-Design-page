@@ -127,7 +127,7 @@ const slideIMGchange_first = () => {
 };
 
 const slideIMGchange_second = () => {
-  heroBlock_slideProver.first === 1 ? (heroBlock_slideProver.first = 3) : (heroBlock_slideProver.first = 1);
+  heroBlock_slideProver.second === 1 ? (heroBlock_slideProver.second = 3) : (heroBlock_slideProver.second = 1);
   heroBlock_secodnIMG.src = heroBlock_ImageSlides[heroBlock_slideProver.second];
 };
 
@@ -180,9 +180,7 @@ const gallery_containerCloseButton = gallery_container.querySelector("#closeButt
 const gallery_containerImg = gallery_container.querySelector("img");
 const gallery_containerNextButtonLeft = gallery_container.querySelector(".photoGallery__arrow--left");
 const gallery_containerNextButtonRigth = gallery_container.querySelector(".photoGallery__arrow--rigth");
-const realizationBlock_PhotoGallery = [
-  ...document.querySelectorAll(".realizationBlock--photoGallery--Container div img"),
-];
+const gallery_PhotosInGallery = [...document.querySelectorAll(".realizationBlock--photoGallery--Container div img")];
 let photoNumber;
 
 gallery_containerCloseButton.addEventListener("click", () => {
@@ -197,18 +195,17 @@ gallery_containerCloseButton.addEventListener("click", () => {
   );
 });
 
-realizationBlock_PhotoGallery.forEach((el) => {
+gallery_PhotosInGallery.forEach((el) => {
   el.addEventListener("click", (e) => {
-    photoNumber = realizationBlock_PhotoGallery.indexOf(e.target) + 1;
+    photoNumber = gallery_PhotosInGallery.indexOf(e.target) + 1;
     gallery_containerImg.src = e.target.src;
     gallery_container.showModal();
-    console.log(photoNumber);
   });
 });
 
 const onClickLeftButton = () => {
   if (photoNumber === 1) {
-    photoNumber = realizationBlock_PhotoGallery.length;
+    photoNumber = gallery_PhotosInGallery.length;
     gallery_containerImg.src = `./data/img/005-realizationBlock/gallery${photoNumber}.png`;
   } else {
     photoNumber--;
@@ -217,7 +214,7 @@ const onClickLeftButton = () => {
 };
 
 const onClickRigthButton = () => {
-  if (photoNumber === realizationBlock_PhotoGallery.length) {
+  if (photoNumber === gallery_PhotosInGallery.length) {
     photoNumber = 1;
     gallery_containerImg.src = `./data/img/005-realizationBlock/gallery${photoNumber}.png`;
   } else {
